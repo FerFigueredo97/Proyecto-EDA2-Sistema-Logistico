@@ -1,0 +1,23 @@
+# Ignorar ejecutables y compilados
+*.exe
+*.o
+*.obj
+*.tds
+
+# Ignorar carpetas de compilación de Visual Studio
+Debug/
+Release/
+x64/
+*.log
+*.tlog
+*.pdb
+*.idb
+
+# Ignorar archivos de usuario de Visual Studio
+*.suo
+*.user
+*.vcxproj.user
+*.sln.docstates
+
+# Carpeta de configuración interna de Visual Studio
+.vs/
