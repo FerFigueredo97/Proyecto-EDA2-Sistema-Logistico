@@ -17,6 +17,7 @@ int main() {
     Ciudad* elNihuil = new Ciudad(6, "El Nihuil", 150, 400);
     Ciudad* laJaula = new Ciudad(7, "La Jaula", 100, 350);
     Ciudad* malargue = new Ciudad(8, "Malargue", 100, 500);
+    //holaaaa
 
     // 2. AGREGARLAS AL GRAFO
     redLogistica.agregarCiudad(mendoza);
