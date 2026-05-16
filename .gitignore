@@ -1,5 +1,13 @@
+# ==========================
+#  IGNORAR ARCHIVOS TEMPORALES DE VS
+# ==========================
+# Carpeta de configuración interna de Visual Studio
+.vs/
+
 # Ignorar ejecutables y compilados
 *.exe
+*.out
+*.app
 *.o
 *.obj
 *.tds
@@ -19,15 +27,9 @@ x64/
 *.vcxproj.user
 *.sln.docstates
 
-# Carpeta de configuración interna de Visual Studio
-.vs/# Prerequisites
-*.d
-
-# Compiled Object files
+# Compiled Object files (repetidos, los dejé una sola vez)
 *.slo
 *.lo
-*.o
-*.obj
 
 # Precompiled Headers
 *.gch
@@ -36,7 +38,7 @@ x64/
 # Linker files
 *.ilk
 
-# Debugger Files
+# Debugger Files (ya cubierto con *.pdb, pero lo dejo por claridad)
 *.pdb
 
 # Compiled Dynamic libraries
@@ -45,8 +47,7 @@ x64/
 *.dll
 *.so.*
 
-
-# Fortran module files
+# Fortran module files (por si alguna librería los usa)
 *.mod
 *.smod
 
@@ -55,11 +56,6 @@ x64/
 *.la
 *.a
 *.lib
-
-# Executables
-*.exe
-*.out
-*.app
 
 # Build directories
 build/
@@ -76,16 +72,15 @@ compile_commands.json
 
 # Temporary files
 *.tmp
-*.log
 *.bak
 *.swp
 
 # vcpkg
 vcpkg_installed/
 
-# debug information files
+# Debug information files
 *.dwo
 
-# test output & cache
+# Test output & cache
 Testing/
 .cache/
