@@ -7,7 +7,7 @@ int main() {
 
     // 1. CREAR LAS CIUDADES (Nodos)
     // Asignamos un ID único a cada una de las 9 ciudades relevadas.
-    // (Las coordenadas X e Y son inventadas por ahora, se ajustarán cuando pongan el TImage).
+    // (Las coordenadas X e Y son inventadas por ahora, se ajustarán cuando pongamos el TImage).
     Ciudad* mendoza = new Ciudad(0, "Mendoza Capital", 100, 100);
     Ciudad* lasCatitas = new Ciudad(1, "Las Catitas", 200, 100);
     Ciudad* sanCarlos = new Ciudad(2, "San Carlos", 100, 200);

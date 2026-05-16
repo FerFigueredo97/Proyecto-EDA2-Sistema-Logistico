@@ -1,5 +1,9 @@
 #include "Grafo.h"
 #include <iomanip>
+#include <algorithm>
+#include <cctype>
+
+int verificarNombreCiudad(std::string, Ciudad*[], int);
 
 Grafo::Grafo() {
     cantidadNodos = 0;
@@ -18,7 +22,11 @@ Grafo::Grafo() {
 }
 
 void Grafo::agregarCiudad(Ciudad* nuevaCiudad) {
-    if (cantidadNodos < MAX_NODOS) {
+    if (cantidadNodos < MAX_NODOS) { 
+		if (verificarNombreCiudad(nuevaCiudad->getNombre(), ciudades, cantidadNodos) != -1) {
+			std::cout << "Error: El nombre de la ciudad '" << nuevaCiudad->getNombre() << "' ya existe en el grafo. No se puede agregar.\n";
+			return;
+		}
         ciudades[nuevaCiudad->getId()] = nuevaCiudad;
         cantidadNodos++;
     }
@@ -61,4 +69,22 @@ void Grafo::imprimirMatriz() {
         }
         std::cout << "\n";
     }
+}
+
+//Función para verificar si el nombre de la ciudad ya existe en el grafo, evita clones de ciudades con el mismo nombre (aunque con diferente ID).
+int verificarNombreCiudad(std::string nuevaCiudadNombre, Ciudad* ciudades[], int cantidadNodos) {
+
+    std::transform(nuevaCiudadNombre.begin(), nuevaCiudadNombre.end(), nuevaCiudadNombre.begin(),
+        [](unsigned char c) { return std::tolower(c); });
+    
+    for (int i = 0; i < cantidadNodos; i++) {
+        std::string nombreExistente = ciudades[i]->getNombre();    
+        std::transform(nombreExistente.begin(), nombreExistente.end(), nombreExistente.begin(),
+            [](unsigned char c) { return std::tolower(c); });
+
+		if (nuevaCiudadNombre == nombreExistente) {
+            return i;
+		}
+	}
+    return -1; 
 }
